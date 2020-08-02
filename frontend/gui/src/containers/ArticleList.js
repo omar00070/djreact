@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Article } from "../components/Article";
+import { CustomForm } from "../components/Form";
 import axios from "axios";
 
 export const ArticleList = () => {
@@ -13,5 +14,11 @@ export const ArticleList = () => {
     });
   }, []);
 
-  return <Article data={articles.data} />;
+  return (
+    <>
+      <Article data={articles.data} />
+      <br />
+      <CustomForm requestType="post" btnText="Create" />
+    </>
+  );
 };
